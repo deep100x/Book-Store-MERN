@@ -46,12 +46,15 @@ app.post('/books',async (request,response) => {
 })
 
 // Route for GET all books frm database
-app.get('/books',async (request,response) => {
+app.get('/books/:id',async (request,response) => {
   try
   {
-    const books = await Book.find({})
+    const { id } = request.params
+
+    const books = await Book.findById(id)
     return response.status(200).json(books)
-  } catch (error)
+  }
+  catch (error)
   {
     console.log(error.message);
     response.status(500).send({ message: error.message })
