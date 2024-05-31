@@ -25,17 +25,19 @@ const App = () => {
 	}
 
 	return (
-		<div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white pt-10 transition-all">
-			<button onClick={toggleTheme} className="bg-blue-500 text-white p-2 rounded fixed right-2 top-2">
-				{theme === "dark" ? <FiMoon className="size-5" /> : <FiSun className="size-5" />}
-			</button>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/books/details/:id" element={<ShowBook />} />
-				<Route path="/books/delete/:id" element={<DeleteBook />} />
-				<Route path="/books/create" element={<CreateBook />} />
-				<Route path="/books/edit/:id" element={<EditBook />} />
-			</Routes>
+		<div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-all">
+			<div className="min-h-screen container mx-auto bg-gray-100 dark:bg-gray-900 text-black dark:text-white pt-10 transition-all">
+				<button onClick={toggleTheme} className="bg-blue-500 text-white p-2 rounded fixed right-2 top-2">
+					{theme === "dark" ? <FiMoon className="size-6" /> : <FiSun className="size-6" />}
+				</button>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/books/details/:id" element={<ShowBook />} />
+					<Route path="/books/delete/:id" element={<DeleteBook />} />
+					<Route path="/books/create" element={<CreateBook />} />
+					<Route path="/books/edit/:id" element={<EditBook />} />
+				</Routes>
+			</div>
 		</div>
 	)
 }
